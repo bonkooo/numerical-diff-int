@@ -9,18 +9,21 @@ This project is a numerical Derivative and Definite Integral Calculator implemen
 The calculator performs three main calculations:
 
 1. **Derivative Calculation**: Computes the derivative of a chosen function at a specific point using the finite difference method.
-   - Formula: 
    ![Derivative Formula](deriv_form.png)
 
-2. **Integral Calculation (Trapezoidal Rule)**: Estimates the area under a curve by dividing the interval into trapezoids.
-   - Formula:
+   
+
+3. **Integral Calculation (Trapezoidal Rule)**: Estimates the area under a curve by dividing the interval into trapezoids.
    ![Trapezoidal Rule Formula](trap_form.png)
    ![Trapezoidal Rule](trap.png)
 
-3. **Integral Calculation (Simpson's Rule)**: A more accurate method for estimating the area under a curve by using parabolic segments.
-   - Formula:
+   
+
+5. **Integral Calculation (Simpson's Rule)**: A more accurate method for estimating the area under a curve by using parabolic segments.
    ![Simpson's Rule Formula](simp_form.png)
    ![Simpson's Rule](simp.png)
+
+   
 
 ## Supported Functions
 
