@@ -2,7 +2,7 @@
 
 double differential(function<double(double)>& f, double x, double h)
 {
-    return (f(x + h) + f (x - h)) / (2 * h);
+    return (f(x + h) - f (x - h)) / (2 * h);
 }
 
 double integral_trapezoidal(function<double(double)>& f, double a, double b, int n)
