@@ -15,10 +15,10 @@ The calculator performs three main calculations:
 
 2. **Integral Calculation (Trapezoidal Rule)**: Estimates the area under a curve by dividing the interval into trapezoids.
    <div>
-       <img src="trap_form.png" alt="Trapezoidal Rule Formula" width="400"/>
+       <img src="trap_form.png" alt="Trapezoidal Rule Formula" width="300"/>
    </div>
    <div>
-       <img src="trap.png" alt="Trapezoidal Rule" width="400"/>
+       <img src="trap.png" alt="Trapezoidal Rule" width="300"/>
    </div>
 
 3. **Integral Calculation (Simpson's Rule)**: A more accurate method for estimating the area under a curve by using parabolic segments.
@@ -26,7 +26,7 @@ The calculator performs three main calculations:
        <img src="simp_form.png" alt="Simpson's Rule Formula" width="400"/>
    </div>
    <div>
-       <img src="simp.png" alt="Simpson's Rule" width="400"/>
+       <img src="simp.png" alt="Simpson's Rule" width="350"/>
    </div>
 
    
