@@ -35,15 +35,14 @@ The calculator performs three main calculations:
 
 The calculator supports the following types of functions:
 
-- **Linear Function**: \( ax + b \)
-- **Quadratic Function**: \( ax^2 + bx + c \)
+- **Linear Function**: ax + b
+- **Quadratic Function**: ax^2 + bx + c
 - **Trigonometric Functions**: 
-  - Sine: \( a \cdot \sin(bx) \)
-  - Cosine: \( a \cdot \cos(bx) \)
-  - Tangent: \( a \cdot \tan(bx) \)
-- **Exponential Function**: \( a \cdot e^{bx} \)
-- **Logarithmic Function**: \( a \cdot \ln(bx) \)
-
+  - Sine:  a * sin(bx) 
+  - Cosine: a * cos(bx)
+  - Tangent: a * tg(bx) 
+- **Exponential Function**: a * e^(b*x)
+- **Logarithmic Function**: a * log(bx)
 ## How to Run the Project
 
 1. **Clone the Repository**:
