@@ -10,7 +10,7 @@ The calculator performs three main calculations:
 
 1. **Derivative Calculation**: Computes the derivative of a chosen function at a specific point using the finite difference method.
    <div>
-       <img src="deriv_form.png" alt="Derivative Formula" width="400"/>
+       <img src="deriv_form.png" alt="Derivative Formula" width="300"/>
    </div>
 
 2. **Integral Calculation (Trapezoidal Rule)**: Estimates the area under a curve by dividing the interval into trapezoids.
