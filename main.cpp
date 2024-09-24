@@ -21,9 +21,9 @@ int show_menu() {
 }
 
 function<double(double)> get_function(int option) {
+    double a, b, c;
     switch (option) {
     case 'm':
-        double a, b;
         cout << "Linear function - ax + b: \n";
         cout << "Enter value of a: ";
         cin >> a;
@@ -31,7 +31,6 @@ function<double(double)> get_function(int option) {
         cin >> b;
         return [a, b](double x) { return a * x + b; };
     case 'q':
-        double a, b, c;
         cout << "Quadratic function - ax^2 + bx + c: \n";
         cout << "Enter value of a: ";
         cin >> a;
@@ -42,7 +41,6 @@ function<double(double)> get_function(int option) {
         return [a, b, c](double x) { return a * x * x + b * x + c; };
     case 't':
         char trigOption;
-        double a, b;
         cout << "Choose a trigonometric function to work with\n";
         cout << "s - Sine : a * sin(bx)\n";
         cout << "c - Cosine : a * cos(bx)\n";
@@ -78,7 +76,6 @@ function<double(double)> get_function(int option) {
         }
         
     case 'x':
-        double a, b;
         cout << "Exponential function - a * e^(b*x) : \n";
         cout << "Enter value of a: ";
         cin >> a;
@@ -86,19 +83,19 @@ function<double(double)> get_function(int option) {
         cin >> b;
         return [a, b](double x) { return a * exp(b * x); };
     case 'l':
-        double a, b;
         cout << "Logarithmic function a * ln(bx) : \n";
         cout << "Enter value of a: ";
         cin >> a;
         cout << "Enter value of b: ";
         cin >> b;
         return [a, b](double x) { return a * log(b * x); };
-    }
     default:
-        cerr <<""
+        cerr << "Wrong option\n";
+    }
+    
 }
 
-void read_config(string& filename, double& step_size, int& n) {
+void read_config(const string& filename, double& step_size, int& n) {
     ifstream file(filename);
     if (file.is_open()) {
         file >> step_size;
@@ -116,15 +113,43 @@ int main() {
     double step_size;
     int n;
     read_config("config.txt", step_size, n);
-    char option;
+    char option, select;
+    double x, a, b;
 
     do {
         option = show_menu();
         if (option == 'e') {
             cout << "Exiting the program...\n";
-                break;
+            break;
         }
         auto f = get_function(option);
+        cout << "Do you want to calculate the derivative or the integral of this function?\n";
+        cout << "d - Derivative\n";
+        cout << "i - Integral\n";
+        cin >> select;
+        double derivative, integral_trap, integral_simp;
+        switch (select) {
+        case 'd':
+            cout << "At which point x do you want to calculate the derivative? ";
+            cin >> x;
+            derivative = differential(f, x, step_size);
+            cout << "Derivative at x = " << x << " is: " << derivative << "\n";
+            break;
+        case 'i':
+            cout << "Enter the integration limits a and b:\n";
+            cout << "Enter a: ";
+            cin >> a;
+            cout << "Enter b: ";
+            cin >> b;
+            integral_trap = integral_trapezoidal(f, a, b, n);
+            integral_simp = integral_simpson(f, a, b, n);
+            cout << "Area under the function from point " << a << " to " << b << ": " << integral_trap << " according to the Trapezodial method\n";
+            cout << "Area under the function from point " << a << " to " << b << ": " << integral_simp << " according to Simpsons method\n";
+            break;
+        default:
+            cerr << "Wrong option\n";
+            break;
+        }
 
-        
-    }
+    } while (option != 'e');
+}
