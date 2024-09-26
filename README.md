@@ -47,8 +47,8 @@ The calculator supports the following types of functions:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/differential-integral-calculator.git
-   cd differential-integral-calculator
+   git clone https://github.com/bonkooo/numerical-diff-int.git
+   cd numerical-diff-int
    ```
 2. **Compile the Code**
   ```bash
